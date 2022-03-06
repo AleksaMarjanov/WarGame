@@ -55,8 +55,9 @@ export default class Deck {
             this._cards.push(new Card('A', suit, 14));
 
         });
-
+        //console.warn(this._cards);
     }
+
     //creating a method inside our Deck class to randomly shuffle 
     shuffle() {
         for (let i = 0; i < 26; i++) {
@@ -64,17 +65,6 @@ export default class Deck {
             this._player2Deck.push(this._cards.splice((Math.floor(Math.random() * this.numberOfCards)), 1));
         }
     }
-    // shuffle() {
-    //     for (let i = this.numberOfCards - 1; i > 0; i--) {
-    //         const newIndex = Math.floor(Math.random() * (i + 1));
-    //         const oldValue = this._cards[newIndex];
-    //         this._cards[newIndex] = this._cards[i];
-    //         this._cards[i] = oldValue;
-    //     }
-    // }
-
-    // After that shuffle I am supposed to split the deck between the players, 
-    // Could probably do that in script.js
 }
 
 

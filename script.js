@@ -52,8 +52,8 @@ class Menu {
     dealCards() {
         alert('Press OK to deal cards to the players');
         this.deck = new Deck();
-        console.warn('This is what the new deck would look like: ', this.deck);
         this.deck.freshDeck();
+        console.log('This should be the deck of cards:', this.deck);
         this.deck.shuffle();
         console.warn('This is the shuffled deck: ', this.deck);
         alert(`Deck has been shuffled and dealt to ${this.player1} and ${this.player2}`)
@@ -92,6 +92,7 @@ class Menu {
             console.log('Player 2 POINTS: ', this.player2Points);
         }
     }
+
 }
 
 const menu = new Menu();
