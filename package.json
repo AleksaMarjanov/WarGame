@@ -1,0 +1,25 @@
+{
+  "name": "unittest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "deck.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksaMarjanov/WarGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AleksaMarjanov/WarGame/issues"
+  },
+  "homepage": "https://github.com/AleksaMarjanov/WarGame#readme",
+  "devDependencies": {
+    "mocha": "^9.2.1"
+  },
+  "dependencies": {
+    "chai": "^4.3.6"
+  }
+}
