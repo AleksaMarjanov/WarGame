@@ -20,7 +20,7 @@
 // }
 
 // // Creating a deck and player
-// export default class Deck {
+// class Deck {
 //     _cards;
 //     _player1Deck;
 //     _player2Deck;
@@ -66,5 +66,4 @@
 //         }
 //     }
 // }
-
 

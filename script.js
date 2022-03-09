@@ -160,6 +160,7 @@ class Menu {
             `);
             console.log('Player 1 POINTS: ', this.player1Points);
             console.log('Player 2 POINTS: ', this.player2Points);
+            console.log('It is a tie');
         }
     }
 

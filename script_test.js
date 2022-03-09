@@ -1,13 +1,14 @@
 const expect = chai.expect;
 
 
-describe('Is input in the prompt string?', () => {
-    describe('#addPlayers', () => {
-        it('should return true if the input is string', () => {
+describe('Is the number of cards 52 before dealing to the players?', () => {
+    describe('#getNumberOfCards', () => {
+        it('should return true if number of card is 52 before dealing', () => {
             // My class is Menu, method is addPlayers()
-            let string = new Menu();
-            expect(string.addPlayer).to.be.a('string');
-
+            const newDeck = new Deck();
+            newDeck.freshDeck();
+            console.log('Test', newDeck.numberOfCards)
+            expect(newDeck.numberOfCards).to.equal(52);
         })
     })
 })
