@@ -44,8 +44,6 @@ class Deck {
     // creating a new deck and pushing suits and values in the _cards array
     freshDeck() {
         const SUITS = ["♠", "♣", "♥", "♦"];
-
-
         SUITS.forEach(suit => {
             for (let i = 2; i < 11; i++) {
                 this._cards.push(new Card(i, suit, i));
@@ -66,7 +64,6 @@ class Deck {
         }
     }
 }
-
 // Creating a menu with player1 and player2
 class Menu {
     player1;
@@ -157,9 +154,8 @@ class Menu {
             console.log('Player 2 POINTS: ', this.player2Points);
             console.log(`Player 2 has won with ${this.player2Points} Points`);
         } else {
-            alert(`It is a tie!
-            The final score was ${this.player1}: ${this.player1Points} to ${this.player2}: ${this.player2Points}
-            `);
+            alert(`It is tie! 
+            The final score was ${this.player2Points} to ${this.player1Points}`)
             console.log('Player 1 POINTS: ', this.player1Points);
             console.log('Player 2 POINTS: ', this.player2Points);
             console.log('It is a tie');
@@ -167,7 +163,7 @@ class Menu {
     }
 
 }
-// creating new instaces that will launch our Menu App with methods inside it :)
+// creating new instaces that will launch our Menu App with methods inside
 const menu = new Menu();
 menu.start();
 
