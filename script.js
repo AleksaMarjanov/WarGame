@@ -20,7 +20,7 @@ class Card {
     }
 }
 
-// Creating a deck and player
+// Creating a deck and player's hands
 class Deck {
     _cards;
     _player1Deck;
@@ -41,7 +41,7 @@ class Deck {
     get player2Deck() {
         return this._player2Deck;
     }
-
+    // creating a new deck and pushing suits and values in the _cards array
     freshDeck() {
         const SUITS = ["♠", "♣", "♥", "♦"];
 
@@ -56,10 +56,9 @@ class Deck {
             this._cards.push(new Card('A', suit, 14));
 
         });
-        //console.warn(this._cards);
     }
 
-    //creating a method inside our Deck class to randomly shuffle
+    //creating a method that will randomly shuffle our cards in the deck
     shuffle() {
         for (let i = 0; i < 26; i++) {
             this._player1Deck.push(this._cards.splice((Math.floor(Math.random() * this.numberOfCards)), 1));
@@ -68,8 +67,7 @@ class Deck {
     }
 }
 
-
-
+// Creating a menu with player1 and player2
 class Menu {
     player1;
     player2;
@@ -109,6 +107,7 @@ class Menu {
         >-----------------------------<
         `);
     }
+    // adding players with the prompt 
     addPlayers() {
 
         this.player1 = prompt('Enter a name for a Player One');
@@ -119,6 +118,7 @@ class Menu {
         alert(`${this.player2} is the Player Two name`);
 
     }
+    // Method deal cards will first create a deck, push values&suits in it and then shuffle it and deal it to players
     dealCards() {
         alert('Press OK to deal cards to the players');
         this.deck = new Deck();
@@ -128,12 +128,14 @@ class Menu {
         console.warn('This is the shuffled deck: ', this.deck);
         alert(`Deck has been shuffled and dealt to ${this.player1} and ${this.player2}`)
     }
+    // Creating a method that will start our game, including Player1&Player2 Points
     startGame() {
         this.player1Points = 0;
         this.player2Points = 0;
         alert(`Game has started!!!`);
 
-
+        // Looping through Player1Deck and Player2Deck values and checking if player1Deck has bigger
+        // or smaller card and acordingly adding points to each player
         for (let i = 0; i < 26; i++) {
             if (this.deck.player1Deck[i][0].value > this.deck.player2Deck[i][0].value) {
                 this.player1Points += 1;
@@ -141,7 +143,7 @@ class Menu {
                 this.player2Points += 1;
             }
         };
-
+        // Declaring a winner : 
         if (this.player1Points > this.player2Points) {
             alert(`${this.player1} has won!
             The final score was ${this.player1Points} to ${this.player2Points}
@@ -165,7 +167,7 @@ class Menu {
     }
 
 }
-
+// creating new instaces that will launch our Menu App with methods inside it :)
 const menu = new Menu();
 menu.start();
 
