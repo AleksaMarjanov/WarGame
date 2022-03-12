@@ -76,16 +76,26 @@ class Game extends Deck {
     player2;
 
     constructor() {
+        // using super to extract players hands ( player1deck and player2deck) and use it within class Game
         super();
         this.player1 = '';
         this.player2 = '';
 
     }
+    // Creating players
     addPlayers() {
-
+        let index = prompt
         this.player1 = prompt('Enter a name for a Player One');
+        if (typeof index !== '') {
+            alert('You can not click cancel yet game just started')
+            prompt('Enter a name for Player One:')
+        }
         console.log(`Player 1: ${this.player1}`);
         this.player2 = prompt('Enter a name for a Player Two');
+        if (typeof index !== '') {
+            alert('You can not click cancel yet game just started')
+            prompt('Enter a name for Player Two:')
+        }
         console.log(`Player 2: ${this.player2}`);
         alert(`${this.player1} is the Player One name`);
         alert(`${this.player2} is the Player Two name`);
@@ -93,14 +103,18 @@ class Game extends Deck {
     }
     // Method deal cards will first create a deck, push values&suits in it and then shuffle it and deal it to players
     dealToPlayers() {
-        alert('Press OK to deal cards to the players');
+        alert('Press Ok to create a deck');
         this.deck = new Deck();
         this.deck.freshDeck();
-        console.log('This should be the deck of cards:', this.deck);
+        console.warn('This should be the deck of cards:', this.deck);
+        alert('Press Ok to shuffle the deck of cards')
         this.deck.shuffle();
-        console.log('This should be the shuffled deck of cards:', this.deck)
+        console.warn('This should be the shuffled deck of cards:', this.deck)
+        alert('Press OK to deal cards to the players');
         this.deck.dealCards();
-        alert(`Deck has been shuffled and dealt to ${this.player1} and ${this.player2}`)
+        alert('Deck has been dealt to players, press Ok to start the game')
+        console.assert('This is shuffled deck and dealt to each player')
+
     }
     // Creating a method that will start our game, including Player1&Player2 Points
     startGame() {
